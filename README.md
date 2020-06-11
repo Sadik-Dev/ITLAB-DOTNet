@@ -8,7 +8,7 @@ Ons opdracht was om een systeem te maken waar studenten zich voor bepaalde sessi
 Het applicatie bestaat uit een Dotnet gedeelte en een Java gedeelte.
 Bekijk hier het dotnet [Dossier](http://webfoliosadik.be/itlab/assets/Dossier-dotNET.pdf)
 
-Java repo 
+[Java Repo](https://github.com/Sadik-Dev/ITLAB-JAVA) 
 
 ##
 
