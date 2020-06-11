@@ -17,18 +17,20 @@ Java repo
 ## Functionaliteiten
 
 Alle Gebruikers kunnen:
-•	Inloggen
-•	Sessieoverzicht weergeven
-•	Sessie details weergeven 
-•	Inschrijven voor sessie
-•	Uitschrijven voor sessie
-•	Aanmelden voor sessie
-•	Feedback van een sessie weergeven
-•	Feedback op een bezochte sessie geven
+
+-	Inloggen
+-	Sessieoverzicht weergeven
+-	Sessie details weergeven 
+-	Inschrijven voor sessie
+-	Uitschrijven voor sessie
+-	Aanmelden voor sessie
+-	Feedback van een sessie weergeven
+-	Feedback op een bezochte sessie geven
 
 Verantwoordelijke of hoofdverantwoordelijke kunnen ook:
-•	Sessie openzetten 
-•	Gebruikers aanwezig melden voor geopende sessie
+
+-	Sessie openzetten 
+-	Gebruikers aanwezig melden voor geopende sessie
 
 
 
