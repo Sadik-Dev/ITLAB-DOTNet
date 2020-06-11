@@ -1,0 +1,258 @@
+﻿
+
+header, footer {
+    display: none;
+}
+
+a {
+    color: inherit; /* blue colors for links too */
+    text-decoration: inherit; /* no underline */
+}
+
+@import url("animation.css");
+@import url('https://fonts.googleapis.com/css?family=Spartan:100,200,300,400,500,600,700,800,900&display=swap');
+@import url("animation.css");
+@import url('https://fonts.googleapis.com/css?family=Spartan:100,200,300,400,500,600,700,800,900&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Baloo+2:400,500,600,700,800&display=swap');
+
+body {
+    background: rgb(0,182,255);
+    background: radial-gradient(circle, rgba(0,182,255,1) 16%, rgba(0,129,197,1) 100%);
+    margin: 0 0 0 0;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    font-family: 'Montserrat';
+}
+
+a {
+    text-decoration: none;
+}
+
+    a:visited {
+    }
+
+
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #85747400;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #FAED09;
+}
+
+    /* Handle on hover */
+    ::-webkit-scrollbar-thumb:hover {
+        background: #555;
+    }
+
+
+
+
+.leftBar {
+    background: #FAED09;
+    width: 4%;
+    margin: 0 0 0 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: rgb(250,223,9);
+    background: radial-gradient(circle, rgba(250,223,9,1) 0%, rgba(250,237,9,1) 100%);
+}
+
+#userNameShortCut {
+    background: rgba(0,129,197,1);
+    width: 60px;
+    height: 60px;
+    margin: 10% auto 0 auto;
+    border-radius: 100%;
+    color: white;
+    font-size: 1.8em;
+    font-weight: 400;
+    text-align: center;
+    line-height: 2.2em;
+    user-select: none;
+}
+
+#logoITLAB {
+    position: absolute;
+    right: 2%;
+    width: 250px;
+    height: 90px;
+    bottom: 1%;
+}
+
+#userNameShortCut p {
+    color: white;
+    font-size: 2.1em;
+    margin: 15% 0 0 0;
+}
+
+#logoutBox {
+    margin: auto 0 0 0;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+    #logoutBox img {
+        width: 40px;
+        margin-left: 13%;
+    }
+
+        #logoutBox img:hover {
+            transform: scale(1.05);
+            transition-duration: 0.5s;
+        }
+
+    #logoutBox:hover {
+        cursor: pointer;
+    }
+
+    #logoutBox P {
+        font-size: 0.6em;
+        color: rgba(0,129,197,1);
+        user-select: none;
+    }
+
+
+.verSS {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin: auto 0 auto 0;
+    background: rgba(0, 0, 0, 0.897);
+}
+
+    .verSS p {
+        font-size: 0.7em;
+        width: 100%;
+        text-align: center;
+        text-transform: uppercase;
+        margin-top: 1%;
+        font-weight: 600;
+        color: #FAED09;
+        user-select: none;
+    }
+
+    .verSS img {
+        margin: 15% auto 0 auto;
+    }
+
+    .verSS:hover {
+        transition-duration: 0.5s;
+        cursor: pointer;
+    }
+
+/*Login Pagina*/
+
+.login {
+    display: flex;
+    flex-direction: column;
+    width: 15%;
+    margin: auto auto auto auto;
+    color: white;
+}
+
+    .login h1 {
+        width: 100%;
+        text-align: center;
+    }
+
+.formFrame {
+    height: 35vh;
+}
+
+    .formFrame form {
+        height: 100%;
+    }
+
+        .formFrame form h4 {
+            width: 100%;
+            text-align: center;
+            margin: 0 0 0 0;
+            font-size: 0.8em;
+            font-weight: 300;
+        }
+
+.form-group {
+    width: 100%;
+   
+    position: relative;
+    height: 20%;
+}
+
+    .form-group input {
+        width: 97%;
+        margin: 4% 0 0 0;
+        height: 25px;
+        border: 0px;
+        padding: 4px;
+        border-radius: 3px;
+    }
+
+    .form-group .btn1 {
+        width: 100%;
+        border: 2px solid rgba(255, 255, 255, 0);
+        margin: 8% auto 0 auto;
+        height: 32px;
+        padding: 5px;
+        text-align: center;
+        text-transform: uppercase;
+        background: #FAED09;
+        color: #0081C5;
+        font-weight: 500;
+        font-size: 1.1em;
+        border-radius: 3px;
+    }
+
+    .form-group img {
+        position: absolute;
+        width: 20px;
+        top: 29%;
+        right: 5%;
+    }
+
+    .form-group span {
+        margin: 2% 0 0 0;
+    }
+
+#btnimg {
+    top: 45%;
+}
+
+.form-group .btn1:hover {
+    background: rgba(0, 0, 0, 0);
+    color: #FAED09;
+    transition-duration: 0.5s;
+    cursor: pointer;
+    border: 2px solid #FAED09;
+}
+@media screen and (max-width: 2560px) {
+    .form-group img {
+        top: 32%;
+    }
+    #btnimg {
+        top: 55%;
+    }
+}
+
+@media screen and (max-width: 1920px) {
+    .form-group img {
+        top: 29%;
+    }
+
+    #btnimg {
+        top: 45%;
+    }
+}

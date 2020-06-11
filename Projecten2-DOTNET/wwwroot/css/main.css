@@ -1,0 +1,1780 @@
+﻿@import url("animation.css");
+@import url('https://fonts.googleapis.com/css?family=Spartan:100,200,300,400,500,600,700,800,900&display=swap');
+
+body {
+    background: rgb(0,182,255);
+    background: radial-gradient(circle, rgba(0,182,255,1) 16%, rgba(0,129,197,1) 100%);
+    margin: 0 0 0 0;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    font-family: 'Montserrat';
+}
+
+a {
+    text-decoration: none;
+}
+
+    a:visited {
+        color: inherit;
+    }
+
+.leftBar {
+    background: #FAED09;
+    width: 3%;
+    margin: 0 0 0 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: rgb(250,223,9);
+    background: radial-gradient(circle, rgba(250,223,9,1) 0%, rgba(250,237,9,1) 100%);
+}
+
+#userNameShortCut {
+    background: rgba(0,129,197,1);
+    width: 60px;
+    height: 60px;
+    margin: 10% auto 0 auto;
+    border-radius: 100%;
+    color: white;
+    font-size: 1.8em;
+    font-weight: 400;
+    text-align: center;
+    line-height: 2.2em;
+    user-select: none;
+}
+
+#logoITLAB {
+    position: absolute;
+    right: 2%;
+    width: 250px;
+    height: 90px;
+    bottom: 1%;
+}
+
+#userNameShortCut p {
+    color: white;
+    font-size: 2.1em;
+    margin: 15% 0 0 0;
+}
+
+#logoutBox {
+    margin: auto 0 0 0;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+    #logoutBox img {
+        width: 40px;
+        margin-left: 13%;
+        margin: 0 auto 0 auto;
+        display: block;
+    }
+
+        #logoutBox img:hover {
+            transform: scale(1.05);
+            transition-duration: 0.5s;
+        }
+
+    #logoutBox:hover {
+        cursor: pointer;
+    }
+
+    #logoutBox P {
+        font-size: 0.6em;
+        color: rgba(0,129,197,1);
+        user-select: none;
+    }
+
+.sessiesBox {
+    /*   border: 1px solid white;*/
+    width: 90%;
+    height: 80vh;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    align-content: flex-start;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    overflow: hidden;
+    overflow-y: scroll;
+    margin: 6% 0 0 3%;
+}
+
+.break {
+    width: 30%;
+    height: 25vh;
+    margin: 3% 0 0 0;
+}
+
+.lineBreak {
+    width: 100%;
+    height: 15vh;
+}
+/* Sessie */
+.sessie {
+    width: 30%;
+    height: 25vh;
+    background: rgb(255,255,255);
+    background: linear-gradient(45deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 0%, rgba(251,250,235,1) 100%);
+    overflow: hidden;
+    background-size: cover; /* <------ */
+    background-repeat: no-repeat;
+    background-position: center center;
+    border-radius: 8px;
+    text-transform: uppercase;
+    -webkit-box-shadow: 0px 4px 16px -5px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 4px 16px -5px rgba(0,0,0,0.75);
+    box-shadow: 0px 4px 16px -5px rgba(0,0,0,0.75);
+    margin: 3% 1% 0 2%;
+    user-select: none;
+    position: relative;
+    transition-duration: 0.5s;
+}
+
+.gestarteSessie {
+    background-image: url(/images/waveBlue.png);
+}
+
+.nietGestarteSessie {
+    background-image: url(/images/wave.png);
+}
+
+.geeindigdeSessie {
+    background-image: url(/images/waveGrey.png);
+}
+
+.sessie:hover {
+    /*margin-top: 2%;*/
+    transform: scale(1.02);
+    transition-duration: 0.5s;
+    cursor: pointer;
+}
+
+.topPaneSessie {
+    height: 100%;
+}
+
+.verantwoorderlijke {
+    width: 100%;
+    height: 22%;
+    display: flex;
+    flex-direction: row;
+}
+
+.auteurInitials {
+    border-radius: 100%;
+    width: 40px;
+    height: 40px;
+    color: black;
+    font-size: 1.2em;
+    font-weight: 500;
+    text-align: center;
+    line-height: 2em;
+    user-select: none;
+    margin: 1% 3% 0 2%;
+}
+
+.gestartBC div {
+    background: #00E6FF;
+    color: black;
+}
+
+.geeindigdeBC p {
+    color: #778899;
+}
+
+.geeindigdeBC div {
+    background: #778899;
+    color: white;
+}
+
+.gestarteButton {
+    background: #00E6FF;
+    color: black;
+}
+
+.geeindigeButton {
+
+    display: none;
+    background: #FF84AB;
+    color: white;
+}
+}
+
+.nietGB {
+    background: #FAED09;
+    color: black;
+}
+
+
+
+.nietGestartBC div {
+    background: #FAED09;
+    color: black;
+}
+
+.nietGestartBC p {
+    color: black;
+}
+
+.verantwoorderlijke p {
+    line-height: 1.3em;
+    font-weight: 500;
+}
+
+.titleSessie {
+    width: 100%;
+    height: 36%;
+}
+
+    .titleSessie p:nth-child(1) {
+        font-size: 1.8em;
+        font-weight: 500;
+        margin: 6% 0 0 2%;
+        color: #0081C5;
+        text-shadow: 0px 0px 2px rgba(150, 150, 150, 1);
+    }
+
+    .titleSessie p:nth-child(2) {
+        text-shadow: 0px 0px 2px rgba(150, 150, 150, 0.5);
+        margin: 2% 0 0 2%;
+        font-size: 1em;
+        color: rgba(73, 164, 234, 0.897);
+        font-family: 'Spartan', sans-serif;
+        font-weight: 500;
+    }
+
+.footerSessie {
+    width: 100%;
+    height: 38%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    position: relative;
+}
+
+.tijdSessie {
+    display: flex;
+    flex-direction: column;
+    width: 46%;
+    margin-left: 2%;
+}
+
+.startTijd {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 5%;
+    margin-top: 10%;
+}
+
+    .startTijd p {
+    }
+
+
+
+.eindeTijd {
+    display: flex;
+    flex-direction: row;
+}
+
+    .eindeTijd p {
+        margin: 0 0 0 0%;
+        font-size: 0.8em;
+        color: rgb(143, 137, 137);
+    }
+
+        .eindeTijd p:nth-child(1) {
+            font-weight: 500;
+        }
+
+
+
+.plaatsen-Aanwezigheden {
+    display: flex;
+    flex-direction: column;
+    width: 35%;
+}
+
+    .plaatsen-Aanwezigheden p {
+        margin: 0 0 0 0;
+        font-size: 0.7em;
+        justify-content: center;
+        text-align: center;
+    }
+
+        .plaatsen-Aanwezigheden p:nth-child(1) {
+            font-size: 1.8em;
+            margin-top: 4%;
+        }
+
+        .plaatsen-Aanwezigheden p:nth-child(2) {
+            margin-top: 3%;
+            color: #00A2D4;
+            font-weight: 600;
+        }
+
+
+.ingeschreven-Aanwezigheid {
+    display: flex;
+    flex-direction: column;
+    width: 35%;
+}
+
+    .ingeschreven-Aanwezigheid img {
+        width: 40px;
+        margin: 4% auto 0 auto;
+    }
+
+    .ingeschreven-Aanwezigheid p {
+        margin: 0 0 0 0;
+        font-size: 0.7em;
+        text-align: center;
+        color: #D34C55;
+        font-weight: 600;
+    }
+
+.ingeschreven p {
+    color: #208D3C;
+}
+
+img {
+    user-select: none;
+}
+
+.sessieState {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    top: 1%;
+    right: 2%;
+    display: flex;
+    flex-direction: column;
+}
+
+    .sessieState img {
+        width: 28px;
+        margin: 0 auto 1% auto;
+    }
+
+    .sessieState p {
+        font-size: 0.6em;
+        text-align: center;
+        font-weight: 700;
+        margin: 0 0 0 0;
+    }
+
+.blackP {
+    color: black;
+}
+
+.whiteP {
+    color: white;
+}
+
+
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #85747400;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #FAED09;
+}
+
+    /* Handle on hover */
+    ::-webkit-scrollbar-thumb:hover {
+        background: #555;
+    }
+
+.sorteerSessies {
+    position: absolute;
+    top: 2%;
+    right: 8%;
+    display: flex;
+    flex-direction: row;
+    z-index: 80;
+}
+
+    .sorteerSessies .selectBox a:nth-child(1) {
+        height: 25px;
+        margin: 0 0% 3% 0;
+        border-radius: 3px;
+        font-weight: 600;
+    }
+
+        .sorteerSessies .selectBox a:nth-child(1):hover {
+            background: black;
+            color: #FAED09;
+            font-weight: 600;
+        }
+
+
+.selectBox {
+    display: flex;
+    flex-direction: row;
+    border-radius: 0%;
+    overflow: hidden;
+    height: 46px;
+    position: relative;
+    transition: height 350ms ease-in-out;
+}
+
+    .selectBox .arrow {
+        height: 30px;
+        width: 30px;
+        position: absolute;
+        background: url(/images/selectArrow2.png);
+        background-size: cover;
+        right: 1%;
+        top: 3px;
+    }
+
+.filterOptions {
+    display: flex;
+    flex-direction: column;
+}
+
+    .filterOptions a {
+        background: rgb(172,219,11);
+        background: linear-gradient(90deg, rgba(172,219,11,1) 0%, rgba(250,237,9,1) 100%);
+        height: 25px;
+        width: 280px;
+        margin: 0% 0 0 0;
+        font-weight: 600;
+        text-align: left;
+        font-size: 1em;
+        font-family: 'Montserrat';
+        color: black;
+        padding: 7px;
+        line-height: 1.5em;
+        user-select: none;
+        text-decoration: none;
+        text-transform: uppercase;
+    }
+
+        .filterOptions a:hover {
+            background: black;
+            color: #FAED09;
+            transition-duration: 0.5s;
+            cursor: pointer;
+        }
+
+.filterSubmit {
+    background: rgb(255,220,38);
+    background: linear-gradient(90deg, rgba(255,220,38,1) 0%, rgba(250,237,9,1) 45%);
+    font-weight: 700;
+    text-transform: uppercase;
+    border: 2px solid rgb(255,220,38);
+    height: 25px;
+    padding: 5px;
+    margin: 5% 0 0 0;
+    line-height: 1.7em;
+    width: 150px;
+    text-align: center;
+    border-radius: 3px;
+    user-select: none;
+}
+
+    .filterSubmit:hover {
+        background: rgba(0, 0, 0, 0);
+        border: 2px solid black;
+        transition-duration: 0.5s;
+        cursor: pointer;
+    }
+
+
+#sorteerSessiesP {
+    font-size: 1.2em;
+    margin: 2% 0 0 0;
+    font-weight: 600;
+    width: 280px;
+    text-transform: uppercase;
+    color: #FAED09;
+    text-shadow: 0px 4px 20px black;
+    text-align: center;
+}
+
+#filterInfo {
+    position: absolute;
+    top: 7%;
+    right: 40%;
+    color: #FAED09;
+    font-weight: 500;
+    text-transform: uppercase;
+    text-shadow: 0px 10px 15px rgba(0, 0, 0, 0.50);
+}
+#filterLegeSessies {
+    position: absolute;
+    top: 3%;
+    position:center;
+    right: 40.6%;
+    color: #FAED09;
+    font-weight: 500;
+    text-transform: uppercase;
+    text-shadow: 0px 10px 15px rgba(0, 0, 0, 0.50);
+}
+
+.ClapSessie {
+    width: 100%;
+    height: 50%;
+    background-size: cover;
+    background-position: center center;
+    display: flex;
+    -ms-flex-direction: row;
+}
+
+.clapStarted {
+    background: url(/images/waveBotBlue.png);
+    background-size: cover;
+    background-position: center center;
+}
+
+.clapNotStarted {
+    background: url(/images/wave2.png);
+    background-size: cover;
+    background-position: center center;
+}
+
+.clapEnded {
+    background: url(/images/waveBotGrey.png);
+    background-size: cover;
+    background-position: center center;
+}
+
+.CSpaneOne {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.alert img {
+    position: absolute;
+    width: 35px;
+    left: 1%;
+    top: 10%;
+}
+.lokaalBox, .gastspekerBox {
+    display: flex;
+    flex-direction: column;
+    margin: 0 0 0 3%;
+}
+
+    .lokaalBox p:nth-child(1), .gastspekerBox p:nth-child(1) {
+        font-weight: 500;
+    }
+
+    .lokaalBox p:nth-child(2), .gastspekerBox p:nth-child(2) {
+        margin-top: 0%;
+        margin-left: 0%;
+    }
+
+.CSpaneTwo {
+    width: 50%;
+    height: 100%;
+    border-left: 1px solid rgba(0, 0, 0, 0.308);
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 auto;
+    overflow-y: auto;
+}
+
+.mediaItem {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    margin-top: 2%;
+    background: rgba(128, 128, 128, 0.062);
+    position: relative;
+}
+
+    .mediaItem:hover {
+        background: #FAED09;
+        transition-duration: 0.5s;
+    }
+
+    .mediaItem img {
+        width: 38px;
+        height: 37px;
+        margin: 4% 0 6% 1%;
+    }
+
+    .mediaItem p {
+        font-size: 0.8em;
+        height: fit-content;
+        margin: 7% 0 0 1%;
+        line-height: 1em;
+    }
+
+        .mediaItem p:nth-child(3) {
+            position: absolute;
+            font-size: 0.6em;
+            bottom: 20%;
+            left: 18%;
+            line-height: 1em;
+            height: fit-content;
+        }
+
+.link img {
+    width: 25px;
+    height: 25px;
+    margin: 5% 2% 0 3%;
+}
+
+.link a {
+    margin: 6% 0 0% 1%;
+    font-size: 0.8em;
+    width: 100%;
+    height: 100%;
+}
+
+.sessieButton {
+    position: relative;
+    margin: 2% 0 5% 0;
+    height: 15%;
+    border: 1px solid rgba(0, 0, 0, 0);
+    border-radius: 0;
+    background: #FAED09;
+    color: black;
+}
+.lightblue {
+    background: rgba(0, 229, 255, 0.55) ;
+}
+.lightrose {
+    background: #FAED0977;
+}
+
+.lightYellow {
+    background: #77889980;
+}
+
+.sessieButton:hover {
+    background: #faed09ba;
+    transition-duration: 0.5s;
+}
+
+    .sessieButton img {
+        position: absolute;
+        width: 30px;
+        bottom: 13%;
+        left: 10%;
+    }
+
+    .sessieButton a {
+        width: 100%;
+        display: block;
+        text-align: center;
+        line-height: 320%;
+        font-weight: 600;
+    }
+
+.Uitschrijven {
+    background: rgb(233, 56, 56);
+}
+
+    .Uitschrijven a {
+        color: white;
+        text-align: center;
+    }
+
+    .Uitschrijven img {
+        bottom: 17%;
+    }
+
+    .Uitschrijven:hover {
+        background: lightgrey;
+        transition-duration: 0.5s;
+    }
+
+
+
+.alert {
+    position: absolute;
+    width: 60%;
+    height: 5vh;
+    z-index: 100;
+    left: 20%;
+    text-align: center;
+    line-height: 2em;
+    font-size: 1.3em;
+    font-weight: 500;
+    font-family: 'Spartan', sans-serif;
+    -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
+    -moz-animation: fadein 2s; /* Firefox < 16 */
+    -ms-animation: fadein 2s; /* Internet Explorer */
+    -o-animation: fadein 2s; /* Opera < 12.1 */
+    animation: fadein 2s;
+    box-shadow: 0px 10px 5px -8px rgba(0,0,0,0.75);
+    overflow: hidden;
+}
+
+
+.success {
+    border-left: 5px solid #208D3C;
+    background: rgba(153, 237, 134, 0.822);
+    color: black;
+    overflow: hidden;
+}
+
+.danger {
+    border-left: 5px solid rgb(167, 3, 3);
+    background: rgba(211, 76, 85, 0.849);
+    color: white;
+    overflow: hidden;
+}
+
+.verSS {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin: auto 0 auto 0;
+    background: rgba(0, 0, 0, 0.897);
+}
+
+    .verSS p {
+        font-size: 0.7em;
+        width: 100%;
+        text-align: center;
+        text-transform: uppercase;
+        margin-top: 1%;
+        font-weight: 600;
+        color: #FAED09;
+    }
+
+    .verSS img {
+        margin: 15% auto 0 auto;
+    }
+
+    .verSS:hover {
+        transition-duration: 0.5s;
+        cursor: pointer;
+    }
+
+.openSessieButton {
+    background: #FAED09;
+    position: relative;
+    margin: auto 0 5% 0;
+    height: 15%;
+    border: 1px solid rgba(0, 0, 0, 0);
+    display: flex;
+    border-radius: 0;
+}
+
+    .openSessieButton a {
+        margin: 0 auto 0 auto;
+        width: 100%;
+        text-align: center;
+        line-height: 3.1em;
+        font-weight: 600;
+    }
+
+    .openSessieButton img {
+        position: absolute;
+        width: 30px;
+        bottom: 20%;
+        left: 5%;
+    }
+
+.login {
+    display: flex;
+    flex-direction: column;
+    width: 15%;
+    margin: auto auto auto auto;
+    color: white;
+}
+
+    .login h1 {
+        width: 100%;
+        text-align: center;
+    }
+
+.formFrame form {
+}
+
+    .formFrame form h4 {
+        width: 100%;
+        text-align: center;
+        margin: 0 0 0 0;
+        font-size: 0.8em;
+        font-weight: 300;
+    }
+
+.form-group {
+    width: 100%;
+    overflow-x: hidden;
+    position: relative;
+}
+
+    .form-group input {
+        width: 97%;
+        margin: 8% 0 0 0;
+        height: 25px;
+        border: 0px;
+        padding: 4px;
+        border-radius: 3px;
+    }
+
+    .form-group .btn1 {
+        width: 100%;
+        border: 2px solid rgba(255, 255, 255, 0);
+        margin: 8% auto 0 auto;
+        height: 32px;
+        padding: 5px;
+        text-align: center;
+        text-transform: uppercase;
+        background: #FAED09;
+        color: #0081C5;
+        font-weight: 500;
+        font-size: 1.1em;
+        border-radius: 3px;
+    }
+
+    .form-group img {
+        position: absolute;
+        width: 20px;
+        top: 52%;
+        right: 5%;
+    }
+
+    .form-group .btn1:hover {
+        background: rgba(0, 0, 0, 0);
+        color: #FAED09;
+        transition-duration: 0.5s;
+        cursor: pointer;
+        border: 2px solid #FAED09;
+    }
+
+.aanmeldenBox {
+    background: #0081C5;
+    width: 98%;
+    height: 98vh;
+    margin: auto auto auto auto;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: row;
+    user-select: none;
+}
+
+.aanwezigeGebruikers {
+    width: 75%;
+    background: rgba(0, 162, 212, 0.363);
+}
+
+.aanmeldenPane {
+    width: 25%;
+    background: rgba(250, 238, 9, 0.87);
+}
+
+.stopSessie {
+    text-transform: uppercase;
+    background: #290B00;
+    width: 45%;
+    text-align: center;
+    margin: 5% auto 0 auto;
+    color: #FAED09;
+    font-weight: 500;
+    padding: 10px;
+    border-radius: 7px;
+}
+
+    .stopSessie:hover {
+        background: rgb(211, 24, 24);
+        color: white;
+        cursor: pointer;
+        transition-duration: 1s;
+    }
+
+.hidePage {
+    background: rgba(0, 0, 0, 0.637);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: none;
+}
+
+.confirmDialog {
+    width: 25%;
+    height: 45vh;
+    background: rgb(250, 244, 244);
+    margin: 15% auto auto auto;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+    .confirmDialog h2 {
+        font-weight: 600;
+        text-transform: uppercase;
+        font-family: Montserrat;
+        font-size: 1.4em;
+        width: 100%;
+        text-align: center;
+    }
+
+.topDialog {
+    height: 45%;
+    background: #007679;
+    display: flex;
+}
+
+    .topDialog img {
+        margin: 7% auto 0 auto;
+        height: 131px;
+    }
+
+.botDialog {
+    display: flex;
+    flex-direction: row;
+}
+
+    .botDialog p {
+        background: #BCB5A7;
+        font-size: 1.4em;
+        padding: 10px;
+        border-radius: 100px;
+        margin: 15% auto 0 auto;
+        width: 25%;
+        text-align: center;
+        color: white;
+        user-select: none;
+    }
+
+        .botDialog p:nth-child(2) {
+            background: #F06071;
+        }
+
+        .botDialog p:hover {
+            transform: scale(1.1);
+            transition-duration: 0.5s;
+            cursor: pointer;
+        }
+
+.filterSessies {
+    z-index: 80;
+    width: fit-content;
+    height: 200px;
+    position: absolute;
+    left: 7.5%;
+    top: 2%;
+    display: flex;
+    flex-direction: column;
+}
+
+.filterContent {
+    display: block;
+    height: 0px;
+    overflow: hidden;
+    transition-duration: 0.5s;
+}
+
+.filterTittle {
+    background: rgb(172,219,11);
+    background: linear-gradient(90deg, rgba(172,219,11,1) 0%, rgba(250,237,9,1) 100%);
+    color: black;
+    border-radius: 3px;
+    width: 290px;
+    overflow: hidden;
+}
+
+.minFilter {
+    width: 25px;
+    position: absolute;
+    right: 1%;
+    display: none;
+}
+
+.filterTittle img {
+    position: absolute;
+    right: 2%;
+    top: 5%;
+    width: 20px;
+}
+
+.customH3 {
+    color: black;
+    padding: 2px;
+    text-shadow: none;
+    user-select: none;
+    height: 100%;
+    line-height: 1.5em;
+}
+
+.filterTittle:hover {
+    /*  margin-top: 6%;*/
+    cursor: pointer;
+    color: #FAED09;
+    background: black;
+    transition-duration: 0.5s;
+}
+
+.customH3:hover {
+    color: #FAED09;
+    transition-duration: 0.5s;
+}
+
+
+.datePickers {
+    height: fit-content;
+    margin: 5% 0 0 0;
+    display: flex;
+    flex-direction: row;
+}
+
+    .datePickers p {
+        margin: 0 0 2% 0;
+    }
+
+    .datePickers div {
+        margin: 0 5% 0 0;
+        color: black;
+        font-weight: 600;
+        text-transform: uppercase;
+        font-size: 0.9em;
+    }
+
+.filterButtons {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+    .filterButtons p {
+        /*  text-transform: uppercase;*/
+        margin: 5% 0 0 0;
+        font-size: 0.9em;
+        width: fit-content;
+        font-family: Montserrat;
+        font-weight: 600;
+        padding: 8px 25px 8px 25px;
+        border-radius: 5px;
+    }
+
+#filterInfo {
+    right: 42%;
+}
+
+.filterButtons p:nth-child(1) {
+    margin-right: auto;
+    border: 1px solid black;
+}
+
+    .filterButtons p:nth-child(1):hover {
+        background: rgb(138, 16, 16);
+        color: white;
+        cursor: pointer;
+        transition-duration: 0.5s;
+        border: 1px solid rgba(0, 0, 0, 0);
+    }
+
+.filterButtons p:nth-child(2) {
+    border: 1px solid rgba(0, 0, 0, 0);
+    border-radius: 5px;
+    background: #FAED09;
+    color: black;
+}
+
+    .filterButtons p:nth-child(2):hover {
+        background: black;
+        color: white;
+        cursor: pointer;
+        transition-duration: 0.5s;
+    }
+
+
+@media screen and (max-width: 2560px) {
+    .sessiesBox {
+        /* border: 1px solid white; */
+        width: 90%;
+        height: 75vh;
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        align-content: flex-start;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        overflow: hidden;
+        overflow-y: scroll;
+        margin: 6% 0 0 3%;
+    }
+    .sessie {
+        width: 25%;
+    }
+
+
+
+    .sorteerSessies {
+        position: absolute;
+        top: 2%;
+        right: 5.5%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    #sorteerSessiesP, .customH3 {
+        font-size: 1.2em;
+        margin: 2% 0 0 0;
+        font-weight: 600;
+        width: 280px;
+        text-transform: uppercase;
+        color: #FAED09;
+        text-shadow: 0px 4px 20px black;
+        text-align: center;
+    }
+    #filterLegeSessies {
+        position: absolute;
+        top: 3%;
+        right: 41%;
+        color: #FAED09;
+        font-weight: 500;
+        text-transform: uppercase;
+        text-shadow: 0px 10px 15px rgba(0, 0, 0, 0.50);
+    }
+    .filterSessies {
+        z-index: 80;
+        width: fit-content;
+        height: 200px;
+        position: absolute;
+        left: 7.5%;
+        top: 2%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .filterContent {
+        display: block;
+        height: 0px;
+        overflow: hidden;
+        transition-duration: 0.5s;
+    }
+
+    .filterTittle {
+        background: rgb(172,219,11);
+        background: linear-gradient(90deg, rgba(172,219,11,1) 0%, rgba(250,237,9,1) 100%);
+        color: black;
+        border-radius: 3px;
+        width: 290px;
+        overflow: hidden;
+    }
+
+    .minFilter {
+        width: 25px;
+        position: absolute;
+        right: 1%;
+        display: none;
+    }
+
+    .filterTittle img {
+        position: absolute;
+        right: 2%;
+        top: 5%;
+        width: 20px;
+    }
+
+    .customH3 {
+        color: black;
+        padding: 2px;
+        text-shadow: none;
+        user-select: none;
+        height: 100%;
+        line-height: 1.5em;
+    }
+
+    .filterTittle:hover {
+        /*  margin-top: 6%;*/
+        cursor: pointer;
+        color: #FAED09;
+        background: black;
+        transition-duration: 0.5s;
+    }
+
+    .customH3:hover {
+        color: #FAED09;
+        transition-duration: 0.5s;
+    }
+
+
+    .datePickers {
+        height: fit-content;
+        margin: 5% 0 0 0;
+        display: flex;
+        flex-direction: row;
+    }
+
+        .datePickers p {
+            margin: 0 0 2% 0;
+        }
+
+        .datePickers div {
+            margin: 0 5% 0 0;
+            color: black;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.9em;
+        }
+
+    .filterButtons {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+    }
+
+        .filterButtons p {
+            /*  text-transform: uppercase;*/
+            margin: 5% 0 0 0;
+            font-size: 0.9em;
+            width: fit-content;
+            font-family: Montserrat;
+            font-weight: 600;
+            padding: 8px 25px 8px 25px;
+            border-radius: 5px;
+        }
+
+    #filterInfo {
+        right: 42%;
+    }
+
+    .filterButtons p:nth-child(1) {
+        margin-right: auto;
+        border: 1px solid black;
+    }
+
+        .filterButtons p:nth-child(1):hover {
+            background: rgb(138, 16, 16);
+            color: white;
+            cursor: pointer;
+            transition-duration: 0.5s;
+            border: 1px solid rgba(0, 0, 0, 0);
+        }
+
+    .filterButtons p:nth-child(2) {
+        border: 1px solid rgba(0, 0, 0, 0);
+        border-radius: 5px;
+        background: #FAED09;
+        color: black;
+    }
+
+        .filterButtons p:nth-child(2):hover {
+            background: black;
+            color: white;
+            cursor: pointer;
+            transition-duration: 0.5s;
+        }
+
+}
+
+@media screen and (max-width: 1920px) {
+    #filterInfo {
+        right: 40%;
+    }
+
+    .sessie {
+        width: 30%;
+    }
+
+    .leftBar {
+        width: 4%;
+    }
+
+    #userNameShortCut {
+        background: rgba(0,129,197,1);
+        width: 50px;
+        height: 50px;
+        margin: 10% auto 0 auto;
+        border-radius: 100%;
+        color: white;
+        font-size: 1.5em;
+        font-weight: 400;
+        text-align: center;
+        line-height: 2.2em;
+        user-select: none;
+    }
+
+
+    .sorteerSessies {
+        position: absolute;
+        top: 2%;
+        right: 3%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    #sorteerSessiesP, .customH3 {
+        font-size: 1.2em;
+        margin: 2% 0 0 0;
+        font-weight: 600;
+        width: 280px;
+        text-transform: uppercase;
+        color: #FAED09;
+        text-shadow: 0px 4px 20px black;
+        text-align: center;
+    }
+
+    .filterSessies {
+        width: fit-content;
+        height: 200px;
+        position: absolute;
+        left: 8.7%;
+        top: 2%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .filterContent {
+        display: block;
+        height: 0px;
+        overflow: hidden;
+        transition-duration: 0.5s;
+    }
+
+    .filterTittle {
+        background: rgb(172,219,11);
+        background: linear-gradient(90deg, rgba(172,219,11,1) 0%, rgba(250,237,9,1) 100%);
+        color: black;
+        border-radius: 3px;
+        width: 290px;
+        overflow: hidden;
+    }
+
+    .minFilter {
+        width: 25px;
+        position: absolute;
+        right: 1%;
+        display: none;
+    }
+
+    .filterTittle img {
+        position: absolute;
+        right: 2%;
+        top: 5%;
+        width: 20px;
+    }
+
+    .customH3 {
+        color: black;
+        padding: 2px;
+        text-shadow: none;
+        user-select: none;
+        height: 100%;
+        line-height: 1.5em;
+    }
+
+    .filterTittle:hover {
+        /*  margin-top: 6%;*/
+        cursor: pointer;
+        color: #FAED09;
+        background: black;
+        transition-duration: 0.5s;
+    }
+
+    .customH3:hover {
+        color: #FAED09;
+        transition-duration: 0.5s;
+    }
+
+
+    .datePickers {
+        height: fit-content;
+        margin: 5% 0 0 0;
+        display: flex;
+        flex-direction: row;
+    }
+
+        .datePickers p {
+            margin: 0 0 2% 0;
+        }
+
+        .datePickers div {
+            margin: 0 5% 0 0;
+            color: black;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.9em;
+        }
+
+    .filterButtons {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+    }
+
+        .filterButtons p {
+            /*  text-transform: uppercase;*/
+            margin: 5% 0 0 0;
+            font-size: 0.9em;
+            width: fit-content;
+            font-family: Montserrat;
+            font-weight: 600;
+            padding: 8px 25px 8px 25px;
+            border-radius: 5px;
+        }
+
+            .filterButtons p:nth-child(1) {
+                margin-right: auto;
+                border: 1px solid black;
+            }
+
+                .filterButtons p:nth-child(1):hover {
+                    background: rgb(138, 16, 16);
+                    color: white;
+                    cursor: pointer;
+                    transition-duration: 0.5s;
+                    border: 1px solid rgba(0, 0, 0, 0);
+                }
+
+            .filterButtons p:nth-child(2) {
+                border: 1px solid rgba(0, 0, 0, 0);
+                border-radius: 5px;
+                background: #FAED09;
+                color: black;
+            }
+
+                .filterButtons p:nth-child(2):hover {
+                    background: black;
+                    color: white;
+                    cursor: pointer;
+                    transition-duration: 0.5s;
+                }
+    .sorteerSessies .selectBox a:nth-child(1) {
+        height: 25px;
+        margin: 0 0% 3% 0;
+        border-radius: 3px;
+        font-weight: 600;
+    }
+
+        .sorteerSessies .selectBox a:nth-child(1):hover {
+            background: black;
+            color: #FAED09;
+            font-weight: 600;
+        }
+
+    .selectBox {
+        display: flex;
+        flex-direction: row;
+        border-radius: 0%;
+        overflow: hidden;
+        height: 46px;
+        position: relative;
+        transition: height 350ms ease-in-out;
+    }
+
+        .selectBox .arrow {
+            height: 30px;
+            width: 30px;
+            position: absolute;
+            background: url(/images/selectArrow2.png);
+            background-size: cover;
+            right: 1%;
+            top: 3px;
+        }
+
+    .filterOptions {
+        display: flex;
+        flex-direction: column;
+    }
+
+        .filterOptions a {
+            background: rgb(172,219,11);
+            background: linear-gradient(90deg, rgba(172,219,11,1) 0%, rgba(250,237,9,1) 100%);
+            height: 25px;
+            width: 280px;
+            margin: 0% 0 0 0;
+            font-weight: 600;
+            text-align: left;
+            font-size: 1em;
+            font-family: 'Montserrat';
+            color: black;
+            padding: 7px;
+            line-height: 1.5em;
+            user-select: none;
+            text-decoration: none;
+            text-transform: uppercase;
+        }
+
+            .filterOptions a:hover {
+                background: black;
+                color: #FAED09;
+                transition-duration: 0.5s;
+                cursor: pointer;
+            }
+
+}
+
+@media screen and (max-width: 1280px) {
+
+    .leftBar {
+        width: 5%;
+    }
+    #filterInfo {
+        right: 33%;
+    }
+    .filterContent {
+        display: block;
+        height: 0px;
+        overflow: hidden;
+        transition-duration: 0.5s;
+        height: 150px;
+        background: #0996fad1;
+        border-radius: 5px;
+    }
+    .filterButtons p {
+        /* text-transform: uppercase; */
+        margin: 11% 1% 2% 1%;
+        font-size: 0.9em;
+        width: fit-content;
+        font-family: Montserrat;
+        font-weight: 600;
+        padding: 8px 25px 8px 25px;
+        border-radius: 5px;
+    }
+        .filterButtons p:nth-child(1) {
+            background: #c63e3e;
+            margin-right: auto;
+            border: 1px solid #c63e3e;
+            color: white;
+        }
+
+    .datePickers div input{
+       margin-left: 1%;
+    }
+    .datePickers p {
+        margin: 0 0 2% 1%;
+    }
+    .verantwoorderlijke p {
+        line-height: 1.3em;
+        font-weight: 500;
+        font-size: 0.8em;
+    }
+    .sessieState img {
+        width: 20px;
+        margin: 0 auto 1% auto;
+    }
+    .titleSessie p:nth-child(1) {
+        font-size: 1.4em;
+        font-weight: 500;
+        margin: 6% 0 0 2%;
+        color: #0081C5;
+        text-shadow: 0px 0px 2px rgba(150, 150, 150, 1);
+    }
+    .titleSessie p:nth-child(2) {
+        text-shadow: 0px 0px 2px rgba(150, 150, 150, 0.5);
+        margin: 2% 0 0 2%;
+        font-size: 0.78em;
+        color: rgba(73, 164, 234, 0.897);
+        font-family: 'Spartan', sans-serif;
+        font-weight: 500;
+    }
+    .plaatsen-Aanwezigheden p:nth-child(1) {
+        font-size: 1.5em;
+        margin-top: 4%;
+    }
+    .plaatsen-Aanwezigheden {
+        display: flex;
+        flex-direction: column;
+        width: 55%;
+    }
+    .tijdSessie {
+        display: flex;
+        flex-direction: column;
+        width: 0%;
+        margin-left: 2%;
+    }
+    .ingeschreven-Aanwezigheid img {
+        width: 33px;
+        margin: 4% auto 0 auto;
+    }
+    .ingeschreven-Aanwezigheid {
+        display: flex;
+        flex-direction: column;
+        width: 65%;
+    }
+    .sessie:hover {
+        /*margin-top: 2%;*/
+        transform: scale(1.0);
+        transition-duration: 0.5s;
+        cursor: pointer;
+    }
+    #filterLegeSessies {
+        position: absolute;
+        top: 3%;
+        right: 34%;
+        color: #FAED09;
+        font-weight: 500;
+        text-transform: uppercase;
+        text-shadow: 0px 10px 15px rgba(0, 0, 0, 0.50);
+    }
+    .verSS p {
+        font-size: 0.6em;
+        width: 100%;
+        text-align: center;
+        text-transform: uppercase;
+        margin-top: 1%;
+        font-weight: 600;
+        color: #FAED09;
+    }
+    .filterTittle {
+        background: rgb(172,219,11);
+        background: linear-gradient(90deg, rgba(172,219,11,1) 0%, rgba(250,237,9,1) 100%);
+        color: black;
+        border-radius: 3px;
+        width: 290px;
+        overflow: visible;
+    }
+    .filterSessies {
+        width: fit-content;
+        height: 38px;
+        position: absolute;
+        left: 8.7%;
+        top: 2%;
+        display: flex;
+        flex-direction: column;
+        overflow: visible;
+    }
+    .filterTittle img {
+        position: absolute;
+        right: 2%;
+        top: 25%;
+        width: 20px;
+    }
+    .sessiesBox {
+        /* border: 1px solid white; */
+        width: 90%;
+        height: 75vh;
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        align-content: flex-start;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        overflow: hidden;
+        overflow-y: scroll;
+        margin: 7% 0 0 3%;
+    }
+    .lokaalBox, .gastspekerBox {
+        display: flex;
+        flex-direction: column;
+        margin: 0 0 0 3%;
+        height: 30%;
+    }
+    .sessieButton a {
+        width: 100%;
+        display: block;
+        text-align: center;
+        line-height: 320%;
+        font-weight: 600;
+        font-size: 0.8em;
+    }
+    .sessieButton img {
+        position: absolute;
+        width: 20px;
+        bottom: 13%;
+        left: 4%;
+    }
+    .lokaalBox p:nth-child(2), .gastspekerBox p:nth-child(2) {
+        margin-top: 0%;
+        margin-left: 0%;
+        font-size: 0.8em;
+    }
+    .lokaalBox p:nth-child(1), .gastspekerBox p:nth-child(1) {
+        font-weight: 500;
+        font-size: 0.8em;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    
+    .sessie {
+    width: 47%;
+    margin: 3% 1% 0 2%;
+}
+    .sessiesBox {
+        /* border: 1px solid white; */
+        width: 90%;
+        height: 75vh;
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        align-content: flex-start;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        overflow: hidden;
+        overflow-y: scroll;
+        margin: 15% 0 0 3%;
+    }
+
+    #filterInfo {
+        right: 25%;
+        /* margin: 0 auto 0 auto; */
+        /* display: block; */
+    }
+    #filterLegeSessies {
+        margin: 5% 0 0 0;
+        right: 27%;
+    }
+    .leftBar {
+        width: 7%;
+    }
+    .sessieButton {
+        position: relative;
+        margin: 2% 0 5% 0;
+        height: 10%;
+        border: 1px solid rgba(0, 0, 0, 0);
+        border-radius: 0;
+    }
+        .sessieButton img {
+            position: absolute;
+            width: 16px;
+            bottom: 20%;
+            left: 4%;
+        }
+        .sessieButton a {
+            width: 100%;
+            display: block;
+            text-align: center;
+            line-height: 290%;
+            font-weight: 600;
+            font-size: 0.8em;
+        }
+    .verSS p {
+        font-size: 0.5em;
+        width: 100%;
+        text-align: center;
+        text-transform: uppercase;
+        margin-top: 1%;
+        font-weight: 600;
+        color: #FAED09;
+    }
+
+    #userNameShortCut {
+        background: rgba(0,129,197,1);
+        width: 45px;
+        height: 45px;
+        margin: 10% auto 0 auto;
+        border-radius: 100%;
+        color: white;
+        font-size: 1.5em;
+        font-weight: 400;
+        text-align: center;
+        line-height: 2em;
+        user-select: none;
+    }
+
+    .footerSessie {
+        width: 100%;
+        height: 38%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        position: relative;
+        margin-top: 5%;
+    }
+}

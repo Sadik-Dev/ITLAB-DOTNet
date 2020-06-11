@@ -1,0 +1,566 @@
+@import url("animation.css"); 
+@import url('https://fonts.googleapis.com/css?family=Spartan:100,200,300,400,500,600,700,800,900&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Baloo+2:400,500,600,700,800&display=swap');
+
+body {
+    background: rgb(0,182,255);
+    background: radial-gradient(circle, rgb(23, 142, 189) 16%, rgba(0,129,197,1) 100%);
+    margin: 0 0 0 0;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    font-family: 'Montserrat';
+}
+
+a{
+    text-decoration: none;
+
+}
+a:visited{
+    color: inherit;
+}
+
+
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #85747400;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #FAED09;
+}
+
+    /* Handle on hover */
+    ::-webkit-scrollbar-thumb:hover {
+        background: #555;
+    }
+
+
+
+    
+.leftBar {
+    background: #FAED09;
+    width: 4%;
+    margin: 0 0 0 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: rgb(250,223,9);
+    background: radial-gradient(circle, rgba(250,223,9,1) 0%, rgba(250,237,9,1) 100%);
+}
+
+#userNameShortCut {
+    background: rgba(0,129,197,1);
+    width: 60px;
+    height: 60px;
+    margin: 10% auto 0 auto;
+    border-radius: 100%;
+    color: white;
+    font-size: 1.8em;
+    font-weight: 400;
+    text-align: center;
+    line-height: 2.2em;
+    user-select: none;
+}
+
+#logoITLAB {
+    position: absolute;
+    right: 2%;
+    width: 250px;
+    height: 90px;
+    bottom: 1%;
+}
+
+#userNameShortCut p {
+    color: white;
+    font-size: 2.1em;
+    margin: 15% 0 0 0;
+}
+
+#logoutBox {
+    margin: auto 0 0 0;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+    #logoutBox img {
+        width: 40px;
+        margin-left: 13%;
+        margin: 0 auto 0 auto;
+        display: block;
+    }
+        #logoutBox img:hover {
+            transform: scale(1.05);
+            transition-duration: 0.5s;
+        }
+
+    #logoutBox:hover {
+        cursor: pointer;
+    }
+
+    #logoutBox P {
+        font-size: 0.6em;
+        color: rgba(0,129,197,1);
+        user-select: none;
+    }
+
+           
+    .verSS{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        margin: auto 0 auto 0 ;
+        background: rgba(0, 0, 0, 0.897);
+    }
+    .verSS p{
+        font-size: 0.7em;
+        width: 100%;
+        text-align: center;
+        text-transform: uppercase;
+      margin-top: 1%;
+        font-weight: 600;
+      color: #FAED09;
+      user-select: none;
+
+    }
+    .verSS img{
+        margin: 15% auto 0 auto;
+
+    }
+    .verSS:hover{
+          transition-duration: 0.5s;
+          cursor: pointer;
+    }
+
+
+
+
+
+
+    .feedbackGeven{
+        background: url(/images/feedbackright.png);
+        background-repeat: no-repeat;
+    }
+
+    .feedbackWeergave{
+        background: rgba(0, 178, 163, 0.863);
+        box-shadow: 0px 0px 8px 0px rgba(0,0,0,0.8);
+
+    }
+    .feedbackGeven {
+        width: 27%;
+        height: 99vh;
+        margin: auto auto auto auto;
+        background-size: cover;
+        background-repeat: round;
+    }
+    .feedbackWeergave{
+        width: 67%;
+        height: 97.5vh;
+        margin: auto auto auto auto;
+        position: relative;
+
+    }
+
+    .contentFG{
+            width: 84%;
+            height: 50%;
+            margin: 8% auto 0 auto;
+
+    }
+
+    .contentFG p {
+        width: 100%;
+        text-align: left;
+        font-weight: 400;
+        color: white;
+        font-size: 1.5em;
+        font-family: 'Baloo 2';
+        user-select: none;
+
+    }
+
+   #black{
+      margin-top: 9%;
+
+    }
+
+    .contentFG textarea{
+        resize: none;
+        width: 100%;
+        height: 20%;
+        margin: 2% 0 0 0;
+        display: block;
+        background: rgba(255, 255, 255, 0);
+        border-radius: 5px;
+        border: 2px solid white;
+        font-size: 1.2em;
+    }
+
+    .contentFG textarea:focus{
+        outline: none;
+        border: 2px solid #FAED09;
+
+    }
+
+    .rating{
+        height: 10%;
+        display: flex;
+        flex-direction: row;
+    }
+    .rating img{
+        width: 40px;
+        height: 40px;
+        margin-right: 1%;
+    }
+
+    .rating img:hover{
+        cursor: pointer;
+    }
+
+    .line{
+        margin-top: 2%;
+        width: 100%;
+        height: 2px;
+        border-radius: 5px;
+        background: white;
+    }
+    .line2{
+        margin-top: 1%;
+        width: 100%;
+        height: 2px;
+        border-radius: 5px;
+        background: white;
+    }
+
+    .contentFG a{
+        background: rgba(255, 255, 255, 0);
+        color: white;
+        margin: 10% 0 0 0 ;
+        display: block;
+        width: 25%;
+        text-align: center;
+        padding: 8px;
+        border-radius: 5px;
+        font-weight: 500;
+        user-select: none;
+        border: 2px solid white;
+    }
+
+    .contentFG a:hover{
+        cursor: pointer;
+        transition-duration: 0.5s;
+        color: black;
+        background: white;
+
+    }
+
+    #sessieTitle{
+        width: 100%;
+        text-align: center;
+        font-size: 3em;
+        color: black;
+        font-weight: 500;
+        margin-top: 2%;
+        text-shadow: 0px 0px 9px rgba(0, 0, 0, 0.4);    
+
+    }
+    .feedContent{
+        width: 100%;
+        height: 80%;
+        background: rgba(0, 236, 216, 0);
+        position: relative;
+        overflow-y: scroll;
+    }
+
+    #feedbackTitle{
+        position: absolute;
+      
+        top: 7%;
+        left: 2%;
+        z-index: 5;
+        width: 96%;
+    }
+    #feedbackTitle p{
+        font-size: 1.5em;
+        color: white;
+        font-weight: 500;
+        font-family: 'Baloo 2';
+        margin: 0 0 0 0;
+    }
+    .feedback{
+        display: flex;
+        flex-direction: row;
+        width: 96%;
+        background: rgba(255, 255, 255, 0.955);
+        margin: 2% auto 0 auto;
+        border-radius: 5px;
+        min-height: 80px;
+        box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.75);
+
+    }
+
+    .datum{
+        width: 15%;
+        text-align: center;
+        font-weight: 500;
+        margin: 1% 0 0 0;
+    }
+    .datum p{
+        margin: 3% 0 0 0;
+    }
+    .datum p:nth-child(2){
+        font-weight: 400;
+    }
+    .gebruikerSC{
+        width: 10%;
+        background: rgb(0, 0, 0);
+        width: 60px;
+        height: 60px;
+        margin: 1% 4% 0 0;
+        border-radius: 100%;
+        color: #FAED09;
+        font-size: 1.8em;
+        font-weight: 400;
+        text-align: center;
+        line-height: 2.2em;
+        user-select: none;
+        display: block;
+    }
+    .inhoud{
+        width: 50%;
+    }
+    .inhoud p:nth-child(1){
+        font-weight: 500;
+    }
+
+    .feedRating{
+        width: 20%;
+        height: 45px;
+        margin: auto auto auto 10%;
+    }
+    .feedRating img{
+        width: 35px;
+        height: 35px;
+    }
+
+
+@media screen and (max-width: 2560px) {
+
+    .leftBar {
+        background: #FAED09;
+        width: 3%;
+     
+    }
+    .feedbackGeven {
+        width: 20%;
+        height: 99vh;
+        margin: auto auto auto auto;
+        background-size: cover;
+        background-repeat: round;
+    }
+}
+
+
+@media screen and (max-width: 1920px) {
+
+    .leftBar {
+        background: #FAED09;
+        width: 4%;
+    }
+
+    .feedbackGeven {
+        width: 27%;
+        height: 99vh;
+        margin: auto auto auto auto;
+        background-size: cover;
+        background-repeat: round;
+    }
+}
+
+@media screen and (max-width: 1280px) {
+
+    .leftBar {
+        background: #FAED09;
+        width: 5%;
+    }
+
+    .verSS p {
+        font-size: 0.6em;
+        width: 100%;
+        text-align: center;
+        text-transform: uppercase;
+        margin-top: 1%;
+        font-weight: 600;
+        color: #FAED09;
+        user-select: none;
+    }
+    #userNameShortCut {
+        background: rgba(0,129,197,1);
+        width: 54px;
+        height: 54px;
+        margin: 10% auto 0 auto;
+        border-radius: 100%;
+        color: white;
+        font-size: 1.8em;
+        font-weight: 400;
+        text-align: center;
+        line-height: 2em;
+        user-select: none;
+    }
+    .line {
+        margin-top: 4%;
+        width: 100%;
+        height: 2px;
+        border-radius: 5px;
+        background: white;
+    }
+    #sessieTitle {
+        width: 100%;
+        text-align: center;
+        font-size: 2em;
+        color: black;
+        font-weight: 500;
+        margin-top: 2%;
+        text-shadow: 0px 0px 9px rgba(0, 0, 0, 0.4);
+    }
+
+    #feedbackTitle p {
+        font-size: 1.2em;
+        color: white;
+        font-weight: 500;
+        font-family: 'Baloo 2';
+        margin: 0 0 0 0;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .leftBar {
+        background: #FAED09;
+        width: 7%;
+    }
+
+    .verSS p {
+        font-size: 0.5em;
+        width: 100%;
+        text-align: center;
+        text-transform: uppercase;
+        margin-top: 1%;
+        font-weight: 600;
+        color: #FAED09;
+        user-select: none;
+    }
+
+    #userNameShortCut {
+        background: rgba(0,129,197,1);
+        width: 45px;
+        height: 45px;
+        margin: 10% auto 0 auto;
+        border-radius: 100%;
+        color: white;
+        font-size: 1.5em;
+        font-weight: 400;
+        text-align: center;
+        line-height: 2em;
+        user-select: none;
+    }
+
+    #logoITLAB {
+        position: absolute;
+        right: 2%;
+        width: 200px;
+        height: 70px;
+        bottom: 1%;
+    }
+
+    .feedbackGeven {
+        width: 30%;
+        height: 97vh;
+        margin: auto auto auto auto;
+        background-size: cover;
+        background-repeat: round;
+        background: rgba(0, 178, 163, 0.863);
+    }
+
+    .contentFG a {
+        background: rgba(255, 255, 255, 0);
+        color: white;
+        margin: 10% 0 0 0;
+        display: block;
+        width: auto;
+        text-align: center;
+        padding: 5px;
+        border-radius: 5px;
+        font-weight: 500;
+        user-select: none;
+        border: 2px solid white;
+    }
+
+    .rating img {
+        width: 30px;
+        height: 30px;
+        margin-right: 1%;
+    }
+
+    .contentFG p {
+        width: 100%;
+        text-align: left;
+        font-weight: 400;
+        color: white;
+        font-size: 1.5em;
+        font-family: 'Baloo 2';
+        user-select: none;
+        margin-bottom: 1%;
+    }
+
+    .contentFG p {
+        width: 100%;
+        text-align: left;
+        font-weight: 400;
+        color: white;
+        font-size: 1.1em;
+        font-family: 'Baloo 2';
+        user-select: none;
+        margin-bottom: 1%;
+    }
+
+    .contentFG textarea {
+        resize: none;
+        width: 96%;
+        height: 20%;
+        margin: 2% auto 0 auto;
+        display: block;
+        background: rgba(255, 255, 255, 0);
+        border-radius: 5px;
+        border: 2px solid white;
+        font-size: 1.2em;
+    }
+    .feedbackWeergave {
+        width: 60%;
+        height: 97.5vh;
+        margin: auto auto auto auto;
+        position: relative;
+    }
+    #sessieTitle {
+        width: 100%;
+        text-align: center;
+        font-size: 1.5em;
+        color: black;
+        font-weight: 500;
+        margin-top: 2%;
+        text-shadow: 0px 0px 9px rgba(0, 0, 0, 0.4);
+    }
+}
+
+
+
+

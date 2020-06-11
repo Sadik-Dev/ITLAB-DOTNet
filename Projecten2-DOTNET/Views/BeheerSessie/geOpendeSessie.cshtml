@@ -1,0 +1,105 @@
+﻿@model Projecten2_DOTNET.Models.Domein.Sessie
+
+@section Styles {
+    <link rel="stylesheet" type="text/css" href="~/css/aanmelden.css" />
+
+}
+
+
+@{
+    TempData["sessieid"] = ViewData["sessieid"];
+}
+
+@if (TempData["message"] != null) {
+
+    <div class="alert success">
+        <img src="/images/ok.png">
+
+        @TempData["message"].ToString()
+    </div>
+}
+@if (TempData["error"] != null) {
+
+    <div class="alert danger">
+        <img src="/images/fail.png">
+        @TempData["error"].ToString()
+    </div>
+}
+
+<p id="title">@Model.Titel</p>
+<div class="hidePage">
+    <div class="confirmDialog">
+        <div class="topDialog">
+            <img src="/images/exit.png">
+        </div>
+        <h2>Wilt u de Sessie beëindigen?</h2>
+        <div class="botDialog">
+            <p>Nee</p>
+            <p>Ja</p>
+        </div>
+    </div>
+</div>
+
+<section class="aanmeldenBox">
+
+    <div class="aanmeldenPane">
+        <p class="stopSessie">Sessie beëindigen</p>
+        <div class="sessieInfo">
+            <div class="info">
+                <p>Verantwoordelijke:</p>
+                <p>@Model.Verantwoordelijke.Naam</p>
+                <img src="/images/manager.png">
+
+            </div>
+            <div class="info">
+                <p>Lokaal:</p>
+                <p>@Model.Lokaal.Lokaalcode</p>
+                <img src="/images/room.png">
+
+            </div>
+            <div class="info">
+                <p>Gastspreker:</p>
+                <p>@Model.GastSpreker</p>
+                <img src="/images/guest.png">
+
+            </div>
+            <div class="info">
+                <p>Aantal Ingeschreven gebruikers:</p>
+                <p>@Model.IngeschrevenGebruikers.Count</p>
+                <img src="/images/subs.png">
+
+            </div>
+        </div>
+        <div class="aanmelden">
+            <div class="cnt">
+                <input data-sessie="@Model.Id "type="text" id="barcode" placeholder="Barcode / Gebruikersnaam">
+                <p id="meldAanButton">
+                    Meld aan
+                </p>
+            </div>
+
+        </div>
+    </div>
+    <div class="aanwezigeGebruikers">
+        <div class="counter">
+            <p>@Model.AanwezigeGebruikers.Count</p>
+            <p>Aanwezige gebruikers</p>
+
+        </div>
+        <div class="usersBox">
+            <div class="users">
+                @foreach (var item in Model.AanwezigeGebruikers) {
+                    <div class="user">
+                        <p>@item.Gebruiker.GeefInitials()</p>
+                        <p>@item.Gebruiker.Naam</p>
+                    </div>
+                }
+
+
+
+            </div>
+        </div>
+    </div>
+</section>
+<img src="/images/itlab-logo.png" id="logoITLAB">
+<script src="~/js/aanmelden.js" asp-append-version="true"></script>

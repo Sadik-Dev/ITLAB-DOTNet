@@ -1,0 +1,256 @@
+﻿@model IEnumerable<Projecten2_DOTNET.Models.Domein.Sessie>
+
+@using Projecten2_DOTNET.Models.Domein
+
+<!--BeheerSessie View-->
+@section Styles {
+    <link rel="stylesheet" type="text/css" href="~/css/main.css?v=2" />
+
+}
+@{
+
+    ViewData["Title"] = "Overzicht";
+    var isErEenFilter = false;
+    String[] filterDatums = new String[2];
+    var sessieStatus = "";
+    var cardStyle = "";
+    var statusImg = "";
+    var statusPCol = "";
+    var statusPContent = "";
+    var statusButton = " ";
+    var clapBC = "";
+}
+
+
+<div class="leftBar">
+    <div id="userNameShortCut">
+        @ViewData["gebruikerINITIALS"]
+    </div>
+    <div class="verSS" data-url="beheerSessie">
+        <img src="/images/sessieK.png">
+        <p>Sessie Kalender</p>
+    </div>
+    <div id="logoutBox">
+        <a asp-area="Identity" asp-page="/Account/Login">
+            <img src="/images/logout.png">
+            <p>UITLOGGEN</p>
+        </a>
+
+    </div>
+</div>
+
+@if (TempData["message"] != null)
+{
+
+    <div class="alert success">
+        <img src="/images/ok.png">
+
+        @TempData["message"].ToString()
+    </div>
+}
+@if (TempData["error"] != null)
+{
+
+    <div class="alert danger">
+        <img src="/images/fail.png">
+        @TempData["error"].ToString()
+    </div>
+}
+
+@if (ViewData["filterDate"] != null)
+{
+    isErEenFilter = true;
+    filterDatums = (String[])ViewData["filterDate"];
+    <p id="filterInfo">Sessies van @filterDatums[0] tot @filterDatums[1]</p>
+
+}
+
+
+else
+    isErEenFilter = false;
+
+
+<div class="sorteerSessies">
+    <!--  <p id="sorteerSessiesP">Sorteer Sessies</p>   -->
+
+    <div class="selectBox">
+        <div class="filterOptions">
+            @if (ViewData["sorteerOptie"].Equals("datum"))
+            {
+                <a>Datum</a>
+                @Html.ActionLink("Titel", "Index", "BeheerSessie", new { sorteerOptie = "titel" }, null)
+                @Html.ActionLink("Verantwoorderlijke", "Index", "BeheerSessie", new { sorteerOptie = "verantwoordelijke" }, null)
+
+
+
+            }
+            else if (ViewData["sorteerOptie"].Equals("titel"))
+            {
+
+
+
+                <a>Titel</a>
+                @Html.ActionLink("Datum", "Index", "BeheerSessie", new { sorteerOptie = "datum" }, null)
+                @Html.ActionLink("Verantwoorderlijke", "Index", "BeheerSessie", new { sorteerOptie = "verantwoordelijke" }, null)
+
+
+
+            }
+            else if (ViewData["sorteerOptie"].Equals("verantwoordelijke"))
+            {
+
+
+                <a>Verantwoorderlijke</a>
+                @Html.ActionLink("Datum", "Index", "BeheerSessie", new { sorteerOptie = "datum" }, null)
+                @Html.ActionLink("Titel", "Index", "BeheerSessie", new { sorteerOptie = "titel" }, null)
+
+
+
+            }
+
+        </div>
+        <div class="arrow"></div>
+    </div>
+</div>
+
+
+
+<!--
+
+    <div class="filterSessies">
+    <div class="filterTittle">
+        <p class="customH3">Sessies filteren</p>
+        <img src="/images/filter.png">
+    </div>
+    <div class="filterContent">
+        <div class="datePickers">
+            <div>
+                <p>Datum</p>
+                <input type="text" id="datepicker" autocomplete="off">
+            </div>
+
+
+
+        </div>
+        <div class="filterButtons">
+            <p id="resetFilter">Reset</p>
+            <p id="submitFilter">Filter</p>
+
+        </div>
+    </div>
+
+</div>
+
+-->
+
+
+<div class="sessiesBox">
+
+    @foreach (var item in Model)
+    {
+        @if (item.CurrentState.GetType() == typeof(RegistratieGeslotenAanmeldenOpenState) || item.CurrentState.GetType() == typeof(RegistratieEnAanmeldenOpenState))
+        {
+            sessieStatus = "gestarteSessie";
+            cardStyle = "gestartBC";
+            statusImg = "/images/started.png";
+            statusPCol = "blackP";
+            statusPContent = "Gestart";
+            statusButton = "gestarteButton";
+            clapBC = "clapStarted";
+        }
+        else if (item.CurrentState.GetType() == typeof(AanmeldenEnRegistratieGeslotenState))
+        {
+
+            sessieStatus = "geeindigdeSessie";
+            cardStyle = "geeindigdeBC";
+            statusImg = "/images/end.png";
+            statusPCol = "blackP";
+            statusPContent = "Geëindigd";
+            statusButton = "geeindigeButton";
+            clapBC = "clapEnded";
+
+        }
+        else
+        {
+            sessieStatus = "nietGestarteSessie";
+            cardStyle = "nietGestartBC";
+            statusImg = "/images/notstarted.png";
+            statusPCol = "blackP";
+            statusPContent = "Nog niet gestart";
+            statusButton = "nietGestartButton";
+            clapBC = "clapNotStarted";
+
+        }
+        <div class="sessie @sessieStatus" data-clapped="false">
+            <div class="topPaneSessie">
+
+
+
+                <div class="verantwoorderlijke @cardStyle">
+                    <div class="auteurInitials">
+                        @item.GeefInitialenVerantwoordelijke()
+                    </div>
+                    <p>@item.Verantwoordelijke.Naam</p>
+                </div>
+
+
+                <div class="titleSessie">
+                    <p>@item.Titel</p>
+                    <p> @item.Start.ToString("dd/MM/yyyy HH:mm")</p>
+
+                </div>
+                <div class="footerSessie">
+                    <div class="tijdSessie">
+                        <div class="startTijd">
+                        </div>
+                    </div>
+                    <div class="plaatsen-Aanwezigheden">
+                        <p>@item.GeefAantalVrijePlaatsen()</p>
+                        <p>Open Plaatsen</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sessieState">
+                <img src="@statusImg">
+                <p class="@statusPCol">@statusPContent</p>
+            </div>
+
+            <div class="ClapSessie @clapBC">
+                <div class="CSpaneOne">
+                    <div class="lokaalBox">
+                        <p>Lokaal:</p>
+                        <p>@item.Lokaal.Lokaalcode</p>
+                    </div>
+                    <div class="gastspekerBox">
+                        <p>Gastspreker:</p>
+                        <p>@item.GastSpreker</p>
+                    </div>
+                    <div class="openSessieButton">
+                        @Html.ActionLink("Sessie Openen", "OpenSessieVoorAanmelden", "BeheerSessie", new { sessieId = item.Id }, null)
+                        <img src="/images/go.png">
+                    </div>
+                </div>
+                <div class="CSpaneTwo">
+          
+                </div>
+            </div>
+        </div>
+
+    }
+    <div class="break">
+
+
+    </div>
+</div>
+
+
+
+
+<img src="/images/itlab-logo.png" id="logoITLAB">
+<script src="~/js/callController.js" asp-append-version="true"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
+<script src="~/js/node_modules/lightpick/lightpick.js" asp-append-version="true"></script>
+<script src="~/js/site.js" asp-append-version="true"></script>
+
+

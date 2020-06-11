@@ -1,0 +1,13 @@
+﻿@page
+@model AccessDeniedModel
+@{
+    ViewData["Title"] = "Access denied";
+}
+
+
+<div class="accessdenied" style="margin: auto;color:red;background-color:lightgray;border-radius:5px;padding:50px">
+    <h1 class="text-danger">@ViewData["Title"]</h1>
+    <p class="text-danger">U hebt geen toegang tot deze pagina.</p>
+    <a asp-area="Identity" asp-page="/Account/Login" style="text-decoration:underline">Log in of verander van account</a>
+</div>
+

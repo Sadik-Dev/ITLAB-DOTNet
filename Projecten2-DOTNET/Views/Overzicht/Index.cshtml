@@ -1,0 +1,362 @@
+﻿@model IEnumerable<Projecten2_DOTNET.Models.Domein.Sessie>
+
+@using Projecten2_DOTNET.Models.Domein
+
+@section Styles {
+    <link rel="stylesheet" type="text/css" href="~/css/main.css?v=2" />
+
+}
+
+
+@{
+
+    ViewData["Title"] = "Overzicht";
+    var isErEenFilter = false;
+    String[] filterDatums = new String[2];
+    var sessieStatus = "";
+    var cardStyle = "";
+    var statusImg = "";
+    var statusPCol = "";
+    var statusPContent = "";
+    var statusButton = " ";
+    var clapBC = "";
+    var BGcolor = "";
+}
+
+
+<div class="leftBar">
+    <div id="userNameShortCut">
+        @ViewData["gebruikerINITIALS"]
+    </div>
+
+    @if ((bool)ViewData["isVerantwoordelijke"]) {
+        <div class="verSS" data-url="kalender">
+            <img src="/images/openS.png">
+            <p>Sessie Openen</p>
+        </div>
+    }
+    <div id="logoutBox">
+        <a asp-area="Identity" asp-page="/Account/Login">
+            <img src="/images/logout.png">
+            <p>UITLOGGEN</p>
+        </a>
+
+    </div>
+</div>
+
+@if (TempData["message"] != null) {
+
+    <div class="alert success">
+        <img src="/images/ok.png">
+
+        @TempData["message"].ToString()
+    </div>
+}
+@if (TempData["error"] != null) {
+
+    <div class="alert danger">
+        <img src="/images/fail.png">
+        @TempData["error"].ToString()
+    </div>
+}
+
+@if (ViewData["filterDate"] != null) {
+    isErEenFilter = true;
+    filterDatums = (String[])ViewData["filterDate"];
+    <p id="filterInfo">Sessies van @filterDatums[0] tot @filterDatums[1]</p>
+}
+else {
+    isErEenFilter = false;
+}
+
+
+@if (ViewData["geensessies"] != null) {
+    <p id="filterLegeSessies">Er zijn geen sessies beschikbaar</p>
+}
+
+
+<div class="sorteerSessies">
+    <!--  <p id="sorteerSessiesP">Sorteer Sessies</p>   -->
+
+    <div class="selectBox">
+        <div class="filterOptions">
+            @if (ViewData["sorteerOptie"].Equals("datum")) {
+                if (isErEenFilter) {
+                    <a>Datum</a>
+                    @Html.ActionLink("Titel", "Filter", "Overzicht", new { vanS = filterDatums[0], totS = filterDatums[1], sorteerOptie = "titel" }, null)
+                    @Html.ActionLink("Verantwoordelijke", "Filter", "Overzicht", new { vanS = filterDatums[0], totS = filterDatums[1], sorteerOptie = "verantwoordelijke" }, null)
+                }
+                else {
+                    <a>Datum</a>
+                    @Html.ActionLink("Titel", "Index", "Overzicht", new { sorteerOptie = "titel" }, null)
+                    @Html.ActionLink("Verantwoordelijke", "Index", "Overzicht", new { sorteerOptie = "verantwoordelijke" }, null)
+                }
+
+            }
+            else if (ViewData["sorteerOptie"].Equals("titel")) {
+
+                if (isErEenFilter) {
+                    <a>Titel</a>
+                    @Html.ActionLink("Datum", "Filter", "Overzicht", new { vanS = filterDatums[0], totS = filterDatums[1], sorteerOptie = "datum" }, null)
+                    @Html.ActionLink("Verantwoordelijke", "Filter", "Overzicht", new { vanS = filterDatums[0], totS = filterDatums[1], sorteerOptie = "verantwoordelijke" }, null)
+                }
+                else {
+                    <a>Titel</a>
+                    @Html.ActionLink("Datum", "Index", "Overzicht", new { sorteerOptie = "datum" }, null)
+                    @Html.ActionLink("Verantwoordelijke", "Index", "Overzicht", new { sorteerOptie = "verantwoordelijke" }, null)
+
+                }
+
+            }
+            else if (ViewData["sorteerOptie"].Equals("verantwoordelijke")) {
+                if (isErEenFilter) {
+                    <a>Verantwoordelijke</a>
+                    @Html.ActionLink("Datum", "Filter", "Overzicht", new { vanS = filterDatums[0], totS = filterDatums[1], sorteerOptie = "datum" }, null)
+                    @Html.ActionLink("Titel", "Filter", "Overzicht", new { vanS = filterDatums[0], totS = filterDatums[1], sorteerOptie = "titel" }, null)
+                }
+                else {
+                    <a>Verantwoordelijke</a>
+                    @Html.ActionLink("Datum", "Index", "Overzicht", new { sorteerOptie = "datum" }, null)
+                    @Html.ActionLink("Titel", "Index", "Overzicht", new { sorteerOptie = "titel" }, null)
+                }
+
+
+            }
+
+        </div>
+        <div class="arrow"></div>
+    </div>
+</div>
+
+
+
+
+<div class="filterSessies">
+    <div class="filterTittle">
+        <p class="customH3">Sessies filteren</p>
+        <img src="/images/filter.png">
+    </div>
+    <div class="filterContent">
+        <div class="datePickers">
+            <div>
+                <p>Datum</p>
+                <input type="text" id="datepicker" autocomplete="off">
+            </div>
+
+
+
+        </div>
+        <div class="filterButtons">
+            <p id="resetFilter">Reset</p>
+            <p id="submitFilter">Filter</p>
+
+        </div>
+    </div>
+
+</div>
+
+<div class="sessiesBox">
+
+    @foreach (var item in Model) {
+        @if (item.CurrentState.GetType() == typeof(RegistratieGeslotenAanmeldenOpenState) || item.CurrentState.GetType() == typeof(RegistratieEnAanmeldenOpenState)) {
+            sessieStatus = "gestarteSessie";
+            cardStyle = "gestartBC";
+            statusImg = "/images/started.png";
+            statusPCol = "blackP";
+            statusPContent = "Gestart";
+            statusButton = "gestarteButton";
+            clapBC = "clapStarted";
+            BGcolor = "lightblue";
+
+        }
+        else if (item.CurrentState.GetType() == typeof(AanmeldenEnRegistratieGeslotenState)) {
+
+            sessieStatus = "geeindigdeSessie";
+            cardStyle = "geeindigdeBC";
+            statusImg = "/images/end.png";
+            statusPCol = "whiteP";
+            statusPContent = "Geëindigd";
+            statusButton = "geeindigeButton";
+            clapBC = "clapEnded";
+            BGcolor = "lightYellow";
+
+        }
+        else {
+            sessieStatus = "nietGestarteSessie";
+            cardStyle = "nietGestartBC";
+            statusImg = "/images/notstarted.png";
+            statusPCol = "blackP";
+            statusPContent = "Nog niet gestart";
+            statusButton = "nietGB";
+            clapBC = "clapNotStarted";
+            BGcolor = "lightrose";
+
+        }
+        <div class="sessie @sessieStatus" data-clapped="false">
+            <div class="topPaneSessie">
+
+
+
+                <div class="verantwoorderlijke @cardStyle">
+                    <div class="auteurInitials">
+                        @item.GeefInitialenVerantwoordelijke()
+                    </div>
+                    <p>@item.Verantwoordelijke.Naam</p>
+                </div>
+
+
+                <div class="titleSessie">
+                    <p>@item.Titel</p>
+                    <p> @item.Start.ToString("dd/MM/yyyy HH:mm") - @item.Einde.ToString("HH:mm")</p>
+
+                </div>
+                <div class="footerSessie">
+                    <div class="tijdSessie">
+                        <div class="startTijd">
+                        </div>
+                    </div>
+                    <!--Sessie gestart-->
+                    @if (item.CurrentState.GetType() == typeof(RegistratieGeslotenAanmeldenOpenState) || item.CurrentState.GetType() == typeof(RegistratieEnAanmeldenOpenState)) {
+                        <div class="plaatsen-Aanwezigheden">
+                            <p>@item.GeefAantalAanwezigeGebruikers()</p>
+                            <p>personen aanwezig</p>
+                        </div>
+                        <div class="ingeschreven-Aanwezigheid">
+
+                            @if (item.IsGebruikerAanwezig(((string)ViewData["gebruikerId"]))) {
+                                <img src="/images/aanwezig.png">
+                                <p class="">aanwezig</p>
+                            }
+                            else {
+                                <img src="/images/nietAanwezig.png">
+                                <p>afwezig</p>
+                            }
+
+                        </div>
+
+                    }
+
+                    else {
+                        <!--Sessie nog niet gestart-->
+
+                        @if (item.IsGebruikerIngeschreven(((string)ViewData["gebruikerId"]))) {
+                            <div class="ingeschreven-Aanwezigheid ingeschreven">
+                                <img src="/images/ingeschreven.png">
+                                <p class="">ingeschreven</p>
+                            </div>
+                        }
+                        else {
+
+                            <div class="plaatsen-Aanwezigheden">
+                                <p>@item.GeefAantalVrijePlaatsen()</p>
+                                <p>Open Plaatsen</p>
+                            </div>
+                            <div class="ingeschreven-Aanwezigheid">
+                                <img src="/images/nietIngeschreven.png">
+                                <p>Niet ingeschreven</p>
+                            </div>
+                        }
+
+
+                    }
+
+
+
+                </div>
+            </div>
+
+            <div class="sessieState">
+                <img src="@statusImg">
+                <p class="@statusPCol">@statusPContent</p>
+            </div>
+
+            <div class="ClapSessie @clapBC">
+                <div class="CSpaneOne">
+                    <div class="lokaalBox">
+                        <p>Lokaal:</p>
+                        <p>@item.Lokaal.Lokaalcode</p>
+                    </div>
+                    <div class="gastspekerBox">
+                        <p>Gastspreker:</p>
+                        <p>@item.GastSpreker</p>
+                    </div>
+                    <div class="sessieButton @BGcolor">
+                        @Html.ActionLink("Feedback", "Index", "FeedBack", new { SessieID = item.Id }, null)
+                        <img src="~/images/feedback.png">
+                    </div>
+                    @if (item.IsGebruikerIngeschreven(((string)ViewData["gebruikerId"]))) {
+                        <div class="sessieButton Uitschrijven">
+                            @Html.ActionLink("Uitschrijven", "SchrijfUitVoorSessie", "Overzicht", new { sessieId = item.Id }, null)
+                            <img src="/images/uit.png">
+                        </div>
+                    }
+                    else {
+                        <div class="sessieButton @statusButton">
+                            @Html.ActionLink("Inschrijven", "SchrijfInVoorSessie", "Overzicht", new { sessieId = item.Id }, null)
+                            <img src="/images/sign.png">
+                        </div>
+                    }
+
+                </div>
+                <div class="CSpaneTwo">
+                    @foreach (var element in item.Media) {
+                        switch (element.Type) {
+                            case MediaType.MediaFile:
+                                <a href="@element.Path" target="_blank">
+                                    <div class="mediaItem">
+                                        <img src="/images/file.png">
+                                        @element.Description
+                                    </div>
+                                </a>
+
+                                ; break;
+                            case MediaType.MediaImage:
+                                <a href="@element.Path" target="_blank">
+                                    <div class="mediaItem Image">
+                                        <img src="@element.Path" alt="@element.Description" />
+
+                                    </div>
+                                </a>
+
+                                ; break;
+                            case MediaType.MediaUrl:
+                                <a href="@element.Path" target="_blank">
+                                    <div class="mediaItem link">
+                                        <img src="/images/link.png">
+                                        @element.Description
+
+                                    </div>
+                                 </a> @*url uit txtbestand halen*@
+                                ; break;
+                        }
+                    }
+                    @*<div class="mediaItem">
+            <img src="/images/file.png">
+            <p>Presentatie Beego V2.PDF</p>
+            <p class="fileSize">52 MB</p>
+        </div>
+        <div class="mediaItem link">
+            <img src="/images/link.png">
+            <a href="https://www.youtube.com/watch?v=oHg5SJYRHA0" target="_blank">Activate Google home video</a>
+        </div>*@
+                </div>
+            </div>
+        </div>
+
+    }
+    <div class="break">
+
+
+    </div>
+</div>
+
+
+
+
+<img src="/images/itlab-logo.png" id="logoITLAB">
+<script src="~/js/callController.js" asp-append-version="true"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
+<script src="~/js/node_modules/lightpick/lightpick.js" asp-append-version="true"></script>
+<script src="~/js/site.js" asp-append-version="true"></script>
+
+
